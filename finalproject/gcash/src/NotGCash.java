@@ -20,14 +20,14 @@ public class NotGCash {
 
         while(true){
 
-            System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
+            System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
             System.out.println("Maligayang Pagdating sa HindiGCash!");
-            System.out.println("Pumili sa mga sumusunod:");
+            System.out.println("Pumili sa mga sumusunod:\n");
             System.out.println("1. Magrehistro ng bagong user");
             System.out.println("2. Magshare ng load");
             System.out.println("3. Magcheck ng balance");
             System.out.println("4. Umalis");
-            System.out.print("I-type lamang ang numerong napili: ");
+            System.out.print("\nI-type lamang ang numerong napili: ");
             int napili = Integer.parseInt(myScanner.next());
 
             switch(napili){
@@ -45,9 +45,15 @@ public class NotGCash {
                     break;
 
                 case 4:
-                    System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
+
+                    System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
+                    System.out.println("Ito ang balance ng iyong mga users:");
+                    for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
+                        System.out.println(entry.getKey() + " - " + entry.getValue().getName() + " - " + entry.getValue().getBalance());
+                    }
+                    System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
                     System.out.println("Paalam mula sa NotGCash!");
-                    System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
+                    System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
                     System.exit(0);
 
                 default:
