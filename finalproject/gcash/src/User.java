@@ -1,12 +1,8 @@
 package gcash.src;
 
-import java.util.Map;
-import java.util.HashMap;
-
-public class User {
+public class User implements Share, Load{
     private String name;
     private double balance;
-
 
     public User(String name, double balance){
         this.name = name;
@@ -19,5 +15,15 @@ public class User {
 
     public double getBalance(){
         return this.balance;
+    }
+
+    @Override
+    public boolean receiveLoad(User recipient, double amount) {
+        return false;
+    }
+
+    @Override
+    public boolean sendLoad(User recipient, double amount) {
+        return false;
     }
 }

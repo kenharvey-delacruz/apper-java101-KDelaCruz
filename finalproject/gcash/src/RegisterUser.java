@@ -47,14 +47,10 @@ public class RegisterUser {
             System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
             System.out.println("Ang numerong " + number + " ay matagumpay na na-irehistro!");
 
-            for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
-                if (number.equals(entry.getKey())) {
-                    System.out.println("Ito ang impormasyon ng bagong user: ");
-                    System.out.println("Number: " + entry.getKey());
-                    System.out.println("Name: " + entry.getValue().getName());
-                    System.out.println("Balance: " + entry.getValue().getBalance());
-                }
-            }
+            System.out.println("Ito ang impormasyon ng bagong user: ");
+            System.out.println("Number: " + number);
+            System.out.println("Name: " + userInfo.get(number).getName());
+            System.out.println("Balance: " + userInfo.get(number).getBalance());
 
         }
         System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");

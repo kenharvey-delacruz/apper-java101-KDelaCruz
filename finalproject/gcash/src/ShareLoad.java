@@ -62,26 +62,20 @@ public class ShareLoad {
         System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
         System.out.println("Tagumpay! Ang numerong " + sender + " (" + userInfo.get(sender).getName() + ") " + "ay nagshare kay " + receiver + " (" + userInfo.get(receiver).getName() + ") " +  "ng " + transfer + " load!");
 
-        for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
-            if(sender.equals(entry.getKey())){
-                System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
-                System.out.println("Ito ang bagong impormasyon ng nagsend: ");
-                userInfo.put(sender, new User(entry.getValue().getName(), entry.getValue().getBalance()-transfer));
-                System.out.println("Number: " + entry.getKey());
-                System.out.println("Name: " + entry.getValue().getName());
-                System.out.println("Balance: " + entry.getValue().getBalance());
-            }
+        System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
+        System.out.println("Ito ang bagong impormasyon ng nagsend: ");
+        userInfo.put(sender, new User(userInfo.get(sender).getName(), userInfo.get(sender).getBalance()-transfer));
+        System.out.println("Number: " + sender);
+        System.out.println("Name: " + userInfo.get(sender).getName());
+        System.out.println("Balance: " + userInfo.get(sender).getBalance());
 
-            if(receiver.equals(entry.getKey())){
-                System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
-                System.out.println("Ito ang bagong impormasyon ng sinendan: ");
-                userInfo.put(receiver, new User(entry.getValue().getName(), entry.getValue().getBalance()+transfer));
-                System.out.println("Number: " + entry.getKey());
-                System.out.println("Name: " + entry.getValue().getName());
-                System.out.println("Balance: " + entry.getValue().getBalance());
-            }
+        System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
+        System.out.println("Ito ang bagong impormasyon ng sinendan: ");
+        userInfo.put(receiver, new User(userInfo.get(receiver).getName(), userInfo.get(receiver).getBalance()+transfer));
+        System.out.println("Number: " + receiver);
+        System.out.println("Name: " + userInfo.get(receiver).getName());
+        System.out.println("Balance: " + userInfo.get(receiver).getBalance());
 
-        }
         System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
         System.out.println("Ito ang balance ng mga users");
         for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {

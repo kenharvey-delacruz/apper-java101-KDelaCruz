@@ -21,23 +21,19 @@ public class CheckBalance {
                 System.out.print("Ilagay ang numero na gustong i-check: ");
                 number = myScanner.next();
             } else {
-                for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
-                    if(number.equals(entry.getKey())){
-                        System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
-                        System.out.println("Ito ang impormasyon na iyong hinahanap: ");
-                        System.out.println("Number: " + entry.getKey());
-                        System.out.println("Name: " + entry.getValue().getName());
-                        System.out.println("Balance: " + entry.getValue().getBalance());
-                    }
-                }
+                System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
+                System.out.println("Ito ang impormasyon na iyong hinahanap: ");
+                System.out.println("Number: " + number);
+                System.out.println("Name: " + userInfo.get(number).getName());
+                System.out.println("Balance: " + userInfo.get(number).getBalance());
                 break;
             }
         }
 
-        System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
-        System.out.println("Ito ang balance ng mga users");
-        for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue().getName() + " - " + entry.getValue().getBalance());
-        }
+//        System.out.println("\n+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+\n");
+//        System.out.println("Ito ang balance ng mga users");
+//        for (HashMap.Entry<String, User> entry : userInfo.entrySet()) {
+//            System.out.println(entry.getKey() + " - " + entry.getValue().getName() + " - " + entry.getValue().getBalance());
+//        }
     }
 }
